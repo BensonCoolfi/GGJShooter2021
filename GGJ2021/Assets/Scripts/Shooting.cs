@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
     public float timeBetweenShots;
     public float timeOfFlash = 0.1f;
     private bool canShoot;
-
+  
     private void Start()
     {
         canShoot = true;
@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && canShoot)
+        if (Input.GetButton("Fire1") && canShoot && GameManager.instance.gamePlaying)
         {
             Shoot();
         }

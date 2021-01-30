@@ -14,9 +14,9 @@ public class DemonCotroller : MonoBehaviour
 
             if (hitPoints <= 0)
             {
+                GameManager.instance.SlayDemon();
                 Destroy(gameObject);
             }
         }
     }
-
 }
