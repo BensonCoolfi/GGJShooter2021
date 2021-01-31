@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         gamePlaying = false;
-        Invoke("ShowGameOverScreen", 1.20f);
+        Invoke("ShowGameOverScreen", 0.5f);
     }
 
     private void ShowGameOverScreen()
