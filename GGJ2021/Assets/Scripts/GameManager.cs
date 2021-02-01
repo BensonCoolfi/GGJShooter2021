@@ -61,9 +61,15 @@ public class GameManager : MonoBehaviour
         Invoke("ShowGameOverScreen", 0.5f);
     }
 
-    private void ShowGameOverScreen()
+    public void ShowGameOverScreen()
     {
         gameOverPanel.SetActive(true);
         hudContainer.SetActive(false);
+    }
+ 
+    public void HideGameOverScreen()
+    {
+        gameOverPanel.SetActive(false);
+        hudContainer.SetActive(true);
     }
 }
