@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OpenQuitScreen : MonoBehaviour
 {
     public GameObject QuitScreen;
     public GameObject MainCanvas;
-
 
     // Update is called once per frame
     void Update()
@@ -25,32 +26,21 @@ public class OpenQuitScreen : MonoBehaviour
     {
         QuitScreen.SetActive(true);
         MainCanvas.SetActive(false);
-       // PauseGame();
+
     }
 
     public void CloseQuitScreen()
     {
         QuitScreen.SetActive(false);
         MainCanvas.SetActive(true);
-       // ResumeGame();
     }
 
-   /*** public void PauseGame()
+    public void ShowManuPauseGame()
     {
-        Time.timeScale = 0;
-        PlayerAnim.enabled = false;
-        AttackButton.enabled = false;
-        HealButton.enabled = false;
+        QuitScreen.SetActive(false);
+        MainCanvas.SetActive(true);
     }
-   
-    public void ResumeGame()
-    {
-        Time.timeScale = 1;
-        PlayerAnim.enabled = true;
-        AttackButton.enabled = true;
-        HealButton.enabled = true;
-    }
-**/
+
     public void Quit()
     {
 #if UNITY_EDITOR
