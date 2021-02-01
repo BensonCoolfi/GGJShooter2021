@@ -10,6 +10,9 @@ public class OpenManuScreen : MonoBehaviour
     public GameObject MainCanvas;
     public GameObject ManuPause;
     public GameObject QuitScreen;
+    public PlayerMovement playerMovement1, playerMovement2;
+    public Shooting playerShooting1, playerShooting2;
+
 
 
     // Update is called once per frame
@@ -29,6 +32,10 @@ public class OpenManuScreen : MonoBehaviour
         ManuPause.SetActive(false);
         MainCanvas.SetActive(true);
         QuitScreen.SetActive(false);
+        playerMovement1.enabled = true;
+        playerMovement2.enabled = true;
+        playerShooting1.enabled = true;
+        playerShooting2.enabled = true;
         // ResumeGame();
     }
 
@@ -37,6 +44,10 @@ public class OpenManuScreen : MonoBehaviour
         ManuPause.SetActive(true);
         MainCanvas.SetActive(false);
         QuitScreen.SetActive(false);
+        playerMovement1.enabled = false;
+        playerMovement2.enabled = false;
+        playerShooting1.enabled = false;
+        playerShooting2.enabled = false;
     }
 
     public void ShowQuitScreen()
@@ -44,6 +55,10 @@ public class OpenManuScreen : MonoBehaviour
         ManuPause.SetActive(false);
         MainCanvas.SetActive(false);
         QuitScreen.SetActive(true);
+        playerMovement1.enabled = false;
+        playerMovement2.enabled = false;
+        playerShooting1.enabled = false;
+        playerShooting2.enabled = false;
     }
 
    /*** public void PauseGame()
