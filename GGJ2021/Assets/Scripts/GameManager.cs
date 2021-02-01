@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public CameraController CameraController;
+    public GameObject Player1, Player2;
+
     public GameObject demonContainer, hudContainer, gameOverPanel;
     public TextMeshProUGUI demonCounter, timeCounter;
     public bool gamePlaying { get; private set; }
@@ -28,6 +31,16 @@ public class GameManager : MonoBehaviour
         demonCounter.text = "Demons: 0 / " + numTotalDemons;
 
         gamePlaying = true;
+    }
+
+    public void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            CameraController.switchCamera();
+            Player1.SetActive(false);
+            Player2.SetActive(true);
+        }
     }
 
     public void SlayDemon()
